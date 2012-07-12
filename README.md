@@ -3,17 +3,6 @@ Recognizr
 
 A small library to detect capabilities of mobile browsers.
 
-Include
-=======
-
-### AMD
-
-You can require this in the regular way. See the RequireJS API for more details.
-
-### Browser global
-
-If you don't want to use AMD, Recognizr will be available as `window.Recognizr`.
-
 What?
 =====
 
