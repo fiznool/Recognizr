@@ -31,7 +31,6 @@ Browser global:
   // As above
   
 })(window.Recognizr);
-}
 ```
 
 Properties
