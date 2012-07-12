@@ -55,6 +55,11 @@ This property indicates which you should use for this browser. Possible values a
 ### `animations`
 Theoretically, both iOS 4+ and Android 2.1+ support CSS3 animations, transforms and translates. In reality, performance on some platforms is poor. Use this property to determine whether you should support animations (`true` / `false`).
 
+Contributions
+=============
+
+Many thanks to @jtward for his tireless help.
+
 License
 =======
 
