@@ -50,7 +50,7 @@
     var msieversion = msie && msie[1];
     var blackberry = ua.match(/Blackberry.*Version\/([0-9]+)/);
     var bbversion = blackberry && blackberry[1];
-
+    
     // iOS
     if (ua.indexOf("iPhone") > -1 || ua.indexOf("iPad") > -1 || ua.indexOf("iPod") > -1) {
       if (wkversion && wkversion >= 534) {
@@ -68,11 +68,6 @@
         return _buildReturnObj('safari', '3.1.2-', 'inline', false);
       }
 
-    }
-
-    // CHROME / CHROMIUM
-    if (ua.indexOf('Chrome') > -1 || ua.indexOf('Chromium') > -1) {
-      return _buildReturnObj('chrome', '1+', 'positionfixed', true);
     }
 
     // ANDROID
@@ -93,6 +88,11 @@
         return _buildReturnObj('android', '1.5-', 'inline', false);
       }
 
+    }
+
+    // CHROME / CHROMIUM *** Moved Chrome evaluation after 'Android'
+    if (ua.indexOf('Chrome') > -1 || ua.indexOf('Chromium') > -1) {
+      return _buildReturnObj('chrome', '1+', 'overflowscroll', true);
     }
 
     // IE9+ Mobile
