@@ -44,13 +44,11 @@ where:
 - `{version}` is a string representation of the version number of the browser. This corresponds to the OS version number (e.g. `'5'` for iOS 5)
 
 ### `scroll`
-A fixed header and/or footer is a staple for native mobile apps. The mobile web is not so forgiving. Som,e browsers support native fixed toolbars with support for CSS `overflow: scroll`, others need to use iScroll, and some can't use either and must fallback to inline header/footers.
-
-This property indicates which you should use for this browser. Possible values are:
-- *positionfixed* - you can use the `position: fixed` CSS property on the fixed header, and the `overflow: scroll` CSS property on the scrolling body.
-- *overflowscroll* - you should absolutely position the header/footer with respect to the body using the `position: absolute` CSS property and provide native scrolling in the content region with `overflow: scroll`.
-- *polyfillscroll* - you will need to polyfill the scrolling, using something such as iScroll.
-- *inline* - you shpould let the browser take care of scrolling the entire document as one. You probably have an old browser.
+Returns an object:
+`{ 'toolbar' : '{toolbar}', 'form' : '{form}' }`
+where:
+- `{toolbar}` is one of `fixed` or `inline` depending on whether position:fixed is supported for anchoring the header/footer bars to the top and bottom of the screen.
+- `{form}` is one of `fixed` or `inline` depending on whether the toolbars should be fixed when form elements are active. Most mobile browsers have issues when using position:fixed and form elements are active, so this field can be used to revert back to inline scrolling if needs be.
 
 ### `animations`
 Theoretically, both iOS 4+ and Android 2.1+ support CSS3 animations, transforms and translates. In reality, performance on some platforms is poor. Use this property to determine whether you should support animations (`true` / `false`).
