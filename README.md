@@ -20,6 +20,7 @@ define(['/path/to/recognizr'], function(Recognizr) {
   Recognizr.browser; // -> Returns current browser: split into family and version
   Recognizr.scroll;  // -> Returns scrolling capability.
   Recognizr.animations; // -> Returns whether CSS3 animations are supported or not.
+  Recognizr.audio; // -> Returns whether the HTML5 audio element is supported or not.
   
 });
 ```
@@ -40,8 +41,8 @@ Properties
 Returns an object:
 `{ 'family' : '{family}', 'version' : '{version}' }`
 where:
-- `{family}` is the browser family: one of *safari*, *chrome*, *android*, *msie*, *blackberry* or *unknown*
-- `{version}` is a string representation of the version number of the browser. This corresponds to the OS version number (e.g. `'5'` for iOS 5)
+- `{family}` is the browser family: one of *safari*, *chrome*, *android*, *firefox*, *msie*, *blackberry* or *unknown*
+- `{version}` is an array which represents the version number of the browser or OS, separated by category from major to minor. For example, a for a device running iOS 5.1, the value would be ['5', '1'].
 
 ### `scroll`
 Returns an object:
@@ -52,6 +53,9 @@ where:
 
 ### `animations`
 Theoretically, both iOS 4+ and Android 2.1+ support CSS3 animations, transforms and translates. In reality, performance on some platforms is poor. Use this property to determine whether you should support animations (`true` / `false`).
+
+### `audio`
+Use this property to determine whether you should support audio (`true` / `false`). Support for the HTML5 audio element and its API is poor on some platforms.
 
 Contributions
 =============
