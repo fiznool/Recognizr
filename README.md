@@ -42,7 +42,7 @@ Returns an object:
 `{ 'family' : '{family}', 'version' : '{version}' }`
 where:
 - `{family}` is the browser family: one of *safari*, *chrome*, *android*, *firefox*, *msie*, *blackberry* or *unknown*
-- `{version}` is an array which represents the version number of the browser or OS, separated by category from major to minor. For example, a for a device running iOS 5.1, the value would be ['5', '1'].
+- `{version}` is an array which represents the version number of the browser or OS, separated by category from major to minor. For example, for a device running iOS 5.1, the value would be ['5', '1'].
 
 ### `scroll`
 Returns an object:
